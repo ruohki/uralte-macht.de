@@ -26,7 +26,15 @@ const Mute = styled.div`
     color: ${({ muted }) =>  muted ? 'rgba(255,255,255, 1)' : 'rgba(255,255,255,.25)'};
   }
 `
-
+/*
+<Mute muted={muted} onClick={() => setMuted(!muted)}>
+        {muted ? (
+          <VolumeMuted /> 
+        ) : (
+          <VolumeNormal />
+        )}
+      </Mute>
+*/
 const IndexPage = () => {
   const player = useRef(null);
   const [ muted, setMuted ] = useState(true);
@@ -37,13 +45,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Mute muted={muted} onClick={() => setMuted(!muted)}>
-        {muted ? (
-          <VolumeMuted /> 
-        ) : (
-          <VolumeNormal />
-        )}
-      </Mute>
+      
       <h1><span style={{ fontWeight: 100}}>Niemals vergessen, </span> <Fader list={List} /></h1>
       <audio ref={player} src={BGMusic} loop muted autoPlay />
     </Layout>
