@@ -4,7 +4,6 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import styled, { createGlobalStyle } from 'styled-components';
-import BGMusic from '../audio/bg.webm';
 
 const Global = createGlobalStyle`
   * {
@@ -72,8 +71,6 @@ const Layout = ({ children }) => (
           </Container>
           <Footer>Forscherliga {'<'}Uralte Macht{'>'} 2005-{(new Date()).getFullYear()}</Footer>
         </Wrapper>
-        
-        <audio src={BGMusic} autoPlay loop />
         <Global />
       </>
     )}
